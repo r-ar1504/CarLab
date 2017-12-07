@@ -1,5 +1,5 @@
-<ion-view style="" class=" " id="page5" title="Login">
-    <ion-content class="has-header" padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;">
+<ion-view style=""id="page5" title="Login"  hide-nav-bar="true">
+    <ion-content padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;">
 
 
 
@@ -21,11 +21,13 @@
             </ion-list>
 
             <div style="height: 40px;" class="spacer"></div>
-            <button ng-click="loginEmail(loginForm,user)" class=" button button-balanced  button-block  icon-left ion-ios-email-outline "  id="signup-button3">LOGIN WITH EMAIL</button>
-            
+            <button ng-click="loginEmail(loginForm,user)" class=" button button-balanced  button-block  icon-left ion-ios-email-outline "  id="signup-button3">INICIA SESIÓN</button>
+            <button ng-click="loginFacebook(loginForm.user)"class=" button button-positive  button-block  icon-left ion-social-facebook-outline "  id="signup-facebook">INICIA SESIÓN CON FACEBOOK</button>
+
+
         </form>
 
-		
+
 
 	</ion-content>
 </ion-view>
