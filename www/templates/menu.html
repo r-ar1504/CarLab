@@ -6,10 +6,10 @@
           <div class="card-image" style="background:url('{{item.image}}') ;    background-size: cover;">
           </div>
           <div class="card-links">
-            <a href="#" class="link-button">
+            <a ui-sref="categories({id: item.id})" class="link-button">
                 {{item.name}}
             </a>
-            <a href="#" class="link-button">
+            <a ui-sref="checkout" class="link-button">
                 <i class="icon ion-cash"></i>
             </a>
           </div>

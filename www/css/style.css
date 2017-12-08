@@ -5,7 +5,7 @@
   src: url('/fonts/Gotham-Book-Regular.otf') format('opentype')
 }
 
-p{
+p, h1, input, label, a, h2{
   font-family: 'Gotham Book';
 }
 .app-icon {
@@ -60,10 +60,7 @@ h4 {
   margin-bottom: 16px;
 }
 form[name=loginForm],form[name=signupForm] input::placeholder {
-  text-shadow: 1px 1px #000000
-}
-form[name=loginForm],form[name=signupForm] input::placeholder {
-  text-shadow: 1px 1px #000000
+  text-shadow: 2px 2px #000000
 }
 h4:first-child {
     border-top: none;

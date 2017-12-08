@@ -108,7 +108,7 @@ angular.module('app.controllers', ['ionic-material'])
                 name: cred.name,
                 email: cred.email
             });
-           
+
 
             //Registered OK
             $ionicHistory.nextViewOptions({
@@ -171,14 +171,14 @@ angular.module('app.controllers', ['ionic-material'])
    $timeout(function(){
           var refSlider = new Firebase("https://mfdelivery-64337.firebaseio.com/slider")
     $scope.slideList = $firebaseArray(refSlider);
-        
+
         $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
     },2000)
     $rootScope.extras=true;
     sharedUtils.showLoading();
-    
-   
-    
+
+
+
     //Check if user already logged in
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
@@ -187,7 +187,7 @@ angular.module('app.controllers', ['ionic-material'])
             $scope.cats = snapshot.val();
             $scope.$apply();
           });
-          
+
           sharedUtils.hideLoading();
 
       }
@@ -203,19 +203,19 @@ $scope.loadoo = function() {
     sharedUtils.showLoading();
     $scope.menu=$firebaseArray(fireBaseData.refMenu().orderByChild('category')
           .startAt($stateParams.id).endAt($stateParams.id)
-          
-                              
+
+
                               );
      $scope.addToCart=function(item){
-          
+
     sharedCartService.add(item);
-         
+
   };
-	
+
     sharedUtils.hideLoading();
   }
 
-    
+
     $rootScope.extras=true;
 })
 
@@ -341,7 +341,7 @@ $scope.loadoo = function() {
             $scope.orders = snapshot.val();
             $scope.$apply();
           });
-          
+
    $scope.$broadcast('scroll.refreshComplete');
    $scope.$apply()
 };
@@ -355,9 +355,9 @@ $scope.loadoo = function() {
           sharedUtils.hideLoading();
       }
     });
-    
-   
-    
+
+
+
 })
 
 .run(
@@ -419,10 +419,10 @@ $scope.loadoo = function() {
       }
       // An elaborate, custom popup
       var addressPopup = $ionicPopup.show({
-        template: '<input type="text"   placeholder="Nick Name"  ng-model="data.nickname"> <br/> ' +
-                  '<input type="text"   placeholder="Address" ng-model="data.address"> <br/> ' +
-                  '<input type="number" placeholder="Pincode" ng-model="data.pin"> <br/> ' +
-                  '<input type="number" placeholder="Phone" ng-model="data.phone">',
+        template: '<input type="text"   placeholder="Identificador"  ng-model="data.nickname"> <br/> ' +
+                  '<input type="text"   placeholder="Dirección" ng-model="data.address"> <br/> ' +
+                  '<input type="number" placeholder="CP" ng-model="data.pin"> <br/> ' +
+                  '<input type="number" placeholder="Telefono" ng-model="data.phone">',
         title: title,
         subTitle: sub_title,
         scope: $scope,
@@ -446,7 +446,7 @@ $scope.loadoo = function() {
 
         if(edit_val!=null) {
           //Update  address
-          if(res!=null){ // res ==null  => close 
+          if(res!=null){ // res ==null  => close
             fireBaseData.refUser().child($scope.user_info.uid).child("address").child(edit_val.$id).update({    // set
               nickname: res.nickname,
               address: res.address,
@@ -525,18 +525,18 @@ $scope.loadoo = function() {
 })
 
 .controller('recipeViewCtrl', function($scope, recipeService, $stateParams, $state,sharedCartService) {
-    
+
  console.log(recipeService.get($stateParams.pid));
 
  $scope.singleRecipe = recipeService.get($stateParams.pid);
-    
-    
+
+
 
      $scope.addToCart=function(item){
-          
+
     sharedCartService.add(item);
-         
-  };	
+
+  };
 })
 
 
@@ -546,13 +546,13 @@ $scope.loadoo = function() {
   })
 .controller('MyCtrl', function($scope) {
   // don't be scared by the image value, its just datauri
-  
+
   $scope.items = [
     { id: 1, album: 'Gotta Be Somebody', artist: 'Nickelback', image: 'http://www.jazzybonez.com/images/meals.jpg' },
     { id: 2, album: 'Dark Horse', artist: 'Nickelback', image: 'http://feel-good-food.com/wp-content/uploads/2013/12/logo.png' },
     { id: 3, album: 'Someday', artist: 'Nickelback', image: 'http://www.shadowtour.com/Assets/subway+3+200+x+50.gif' }
   ];
-  
+
 })
 
 .controller('checkoutCtrl', function($scope,$rootScope,sharedUtils,$state,$firebaseArray,$firebaseObject,
@@ -565,21 +565,21 @@ $scope.loadoo = function() {
       if (user) {
         $scope.addresses= $firebaseArray( fireBaseData.refUser().child(user.uid).child("address") );
         $scope.user_info=user;
-        
-          
+
+
       }
     });
 
     $scope.payments = [
       {id: 'CREDIT', name: 'Credit Card'},
-      {id: 'CASHOF', name: 'Cash on delivery'}
+      // {id: 'CASHOF', name: 'Cash on delivery'}
     ];
 
     $scope.pay=function(address,payment){
-       
+
       if(address==null || payment==null){
         //Check if the checkboxes are selected ?
-        sharedUtils.showAlert("Error","Please choose from the Address and Payment Modes.")
+        sharedUtils.showAlert("Error","Por Favor elige el modo de pago y tu dirección")
       }
       else {
         // Loop throw all the cart item
@@ -600,11 +600,11 @@ $scope.loadoo = function() {
             user_id: $scope.user_info.uid,
             user_name:$scope.user_info.displayName,
             address_id: address,
-            
-            time: Date.now(), 
-            
+
+            time: Date.now(),
+
             payment_id: payment,
-            
+
             status: "Queued"
           });
 
@@ -613,7 +613,7 @@ $scope.loadoo = function() {
         //Remove users cart
         fireBaseData.refCart().child($scope.user_info.uid).remove();
 
-        sharedUtils.showAlert("Info", "Order Successfull");
+        sharedUtils.showAlert("Info", "Orden Exitosa!");
 
         // Go to past order page
         $ionicHistory.nextViewOptions({
@@ -631,19 +631,19 @@ $scope.loadoo = function() {
       if(edit_val!=null) {
         $scope.data = edit_val; // For editing address
         var title="Edit Address";
-        var sub_title="Edit your address";
+        var sub_title="Edita tu dirección";
       }
       else {
         $scope.data = {};    // For adding new address
         var title="Add Address";
-        var sub_title="Add your new address";
+        var sub_title="Añadir nueva dirección";
       }
       // An elaborate, custom popup
       var addressPopup = $ionicPopup.show({
-        template: '<input type="text"   placeholder="Nick Name"  ng-model="data.nickname"> <br/> ' +
-        '<input type="text"   placeholder="Address" ng-model="data.address"> <br/> ' +
-        '<input type="number" placeholder="Pincode" ng-model="data.pin"> <br/> ' +
-        '<input type="number" placeholder="Phone" ng-model="data.phone">',
+        template: '<input type="text"   placeholder="Identificador"  ng-model="data.nickname"> <br/> ' +
+        '<input type="text"   placeholder="Dirección" ng-model="data.address"> <br/> ' +
+        '<input type="number" placeholder="CP" ng-model="data.pin"> <br/> ' +
+        '<input type="number" placeholder="Telefono" ng-model="data.phone">',
         title: title,
         subTitle: sub_title,
         scope: $scope,
@@ -689,4 +689,3 @@ $scope.loadoo = function() {
 
 
   })
-
