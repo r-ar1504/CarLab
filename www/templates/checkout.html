@@ -6,7 +6,7 @@
       <!--Address Header-->
       <label ng-click="addManipulation()" class="item item-input  item ic-selected" >
         <a class="icon icon-right ion-ios-location" style="margin-right: 10px;" ></a>
-        Address 
+        Dirección
         <i  class="icon icon-right ion-android-add-circle" style="font-size: larger ;margin-left: 10px;"></i>
       </label>
 
@@ -20,22 +20,22 @@
             Pin : {{item.pin}}<br/>
             Phone : {{item.phone}}
           </ion-radio>
-        
+
       </ion-list>
-       
+
            <ion-list ng-repeat="user in usersss">
-        
+
                phone: {{user}}
         </ion-list>
-       
-      
-     
-       
+
+
+
+
       <!--Payment Header-->
-      <label ng-click="addManipulation()" class="item item-input  item ic-selected" >
+      <!-- <label ng-click="addManipulation()" class="item item-input  item ic-selected" >
         <a class="icon icon-right ion-cash" style="margin-right: 10px;" ></a>
         Mode of Pay
-      </label>
+      </label> -->
 
 
       <!-- Payment Options -->
@@ -45,7 +45,7 @@
 
 
       <button type="submit" class=" button button-calm  button-block icon-right ion-android-arrow-forward ">
-        PAY
+        Pagar
       </button>
 
     </form>

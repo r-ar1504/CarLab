@@ -12,6 +12,18 @@
   flex-flow: column;
 
 }
+a.link-button{
+  border-left: 1px solid lightgrey;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+a.link-button:nth-child(2){
+  font-size: 2rem;
+  color: darkgreen;
+}
 .link {
   color: #116262;
   font-weight: bold;

@@ -6,25 +6,16 @@
           <div class="card-image" style="background:url('{{item.image}}') ;    background-size: cover;">
           </div>
           <div class="card-links">
-            <div class="link-button">
-              Servicio
-            </div>
-            <div class="link-button">
-              Detalle
-            </div>
+            <a href="#" class="link-button">
+                {{item.name}}
+            </a>
+            <a href="#" class="link-button">
+                <i class="icon ion-cash"></i>
+            </a>
           </div>
         </div>
       </div>
     </div>
-<!--
-      <div class="card">
-        <div class="item item-image">
-          <img src="img/bg1.jpg" style="height:140px;">
-        </div>
-        <div class="item item-divider">
-          I'm a Footer in a Card!
-        </div>
-      </div> -->
       <!-- <div ng-repeat="item in cats" class="col col-50">
         <a class="category" ui-sref="categories({id: item.id})">
           <pre-img ratio="_1_1" helper-class="square-image">
