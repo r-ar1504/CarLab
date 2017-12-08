@@ -1,4 +1,13 @@
 /* Utilities */
+
+@font-face {
+  font-family: 'Gotham Book';
+  src: url('/fonts/Gotham-Book-Regular.otf') format('opentype')
+}
+
+p{
+  font-family: 'Gotham Book';
+}
 .app-icon {
   background: rgba(0, 0, 0, 0) url("../img/logo_w.png")  scroll center center / cover ;
 
