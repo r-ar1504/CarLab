@@ -1,20 +1,31 @@
 <ion-view style="" class="categories-view" id="page7" title="Servicios" >
-    <ion-content id="menu" padding="false" class="buttons-components-page"  scrollable="false">
+    <ion-content id="menu" padding="false" class="buttons-components-page"  scrollable="true">
 
-    <div class="row categories-list animated zoomIn" id="services-list" ng-repeat="item in cats">
-        <div class="card">
-          <div class="card-image" style="background:url('{{item.image}}') ;    background-size: cover;">
+      <!-- <ion-slide-box delegate-handle="image-viewer"> -->
+        <!-- <ion-slide ng-repeat="slide in slideList"> -->
+          <!-- <div class="slider-cont" style="background:url('{{slide.image}}');background-size: cover;">
+
+          </div> -->
+          <div class="slider-cont"  style="background:url('https://png.pngtree.com/element_origin_min_pic/17/07/12/99ddc0760a543985d058bf0a30a3d921.jpg');background-size: cover;">
+
           </div>
-          <div class="card-links">
-            <a ui-sref="categories({id: item.id})" class="link-button">
-                {{item.name}}
-            </a>
-            <a ui-sref="checkout" class="link-button">
-                <i class="icon ion-cash"></i>
-            </a>
+        <!-- </ion-slide> -->
+      <!-- </ion-slide-box> -->
+
+      <div class="row categories-list animated zoomIn" id="services-list" ng-repeat="item in cats">
+          <div class="card">
+            <div class="card-image" style="background:url('{{item.image}}') ;    background-size: cover;">
+            </div>
+            <div class="card-links">
+              <a ui-sref="categories({id: item.id})" class="link-button">
+                  {{item.name}}
+              </a>
+              <!-- <a ui-sref="checkout" class="link-button">
+                  <i class="icon ion-cash"></i>
+              </a> -->
+            </div>
           </div>
         </div>
-      </div>
     </div>
       <!-- <div ng-repeat="item in cats" class="col col-50">
         <a class="category" ui-sref="categories({id: item.id})">
@@ -27,8 +38,6 @@
           <span class="category-title">{{item.name}}</span>
         </a>
       </div> -->
-
     </div>
-
 	</ion-content>
 </ion-view>

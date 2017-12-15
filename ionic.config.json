@@ -1,7 +1,9 @@
 {
   "name": "Carlab",
   "app_id": "3b869cba",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic1",
   "watchPatterns": [
     "scss/**/*",

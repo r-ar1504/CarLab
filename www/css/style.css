@@ -15,14 +15,30 @@ p, h1, input, label, a, h2{
   margin: 0 auto;
   width: 180px;
 }
+.slider-cont{
+  height: 150px;
+}
+.ion-slide-box{
+  height: 150px;
+}
 .categories-list{
   padding: 0px 0px 0px 0px;
   display: flex;
   flex-flow: column;
 
 }
+.types{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row;
+}
+.types a{
+  color : black;
+  text-decoration: none;
+}
 a.link-button{
-  border-left: 1px solid lightgrey;
+  /*border-left: 1px solid lightgrey;*/
   color: black;
   display: flex;
   justify-content: center;
@@ -41,7 +57,7 @@ a.link-button:nth-child(2){
   margin: 3px 0px;
 }
 .card-image{
-  height: 100px;
+  height: 150px;
   background-size: contain;
 }
 .card-links{

@@ -152,6 +152,10 @@ angular.module('app.controllers', ['ionic-material'])
       $rootScope.extras = false;
       sharedUtils.hideLoading();
       $state.go('tabsController.login', {}, {location: "replace"});
+      var refSlider = new Firebase("https://carlab-v1.firebaseio.com/slider")
+      $scope.slideList = $firebaseArray(refSlider);
+
+    $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
 
     }
   });
@@ -169,11 +173,11 @@ angular.module('app.controllers', ['ionic-material'])
   });
 
    $timeout(function(){
-          var refSlider = new Firebase("https://mfdelivery-64337.firebaseio.com/slider")
+          var refSlider = new Firebase("https://carlab-v1.firebaseio.com/slider")
     $scope.slideList = $firebaseArray(refSlider);
 
         $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
-    },2000)
+    },500)
     $rootScope.extras=true;
     sharedUtils.showLoading();
 

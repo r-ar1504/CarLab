@@ -6,7 +6,7 @@
             <a ui-sref="recipeView({pid: item.$id})" nav-direction="enter">
             <div class="categories-item" ng-repeat="item in menu">
 
-                <div class="categories-img" style="background-image:url('{{item.image}}');background-size: 360px 120px;position: relative;">
+                <div class="categories-img" style="background-image:url('{{item.image}}');background-size: cover;position: relative;">
 
                 </div></a>
                 <div class="categories-content row">
@@ -21,9 +21,23 @@
                         </p>
                     </div>
                     <div class="col-20">
-                        <h1>${{item.price}}</h1>
+                        <!-- <h1>${{item.price}}</h1> -->
 
                     </div>
+                </div>
+                <div class="categories-content row types">
+                    <a ui-sref="checkout"><div class="">
+                    Tipo 1 <br>
+                    100$
+                  </div></a>
+                      <a ui-sref="checkout"><div class="">
+                    Tipo 2  <br>
+                      85$
+                    </div></a>
+                      <a ui-sref="checkout"><div class="">
+                    Tipo 3  <br>
+                    45$
+                  </div></a>
                 </div>
             </div><!--end location item section-->
        </div>
